@@ -2,7 +2,9 @@ import {HotkeyOptions, IHotkeyOptions} from './hotkey.options';
 import {Subject} from 'rxjs';
 import {Inject, Injectable} from '@angular/core';
 import {Hotkey} from './hotkey.model';
-import 'mousetrap';
+// import 'mousetrap';
+import { MousetrapInstance } from 'mousetrap';
+import Mousetrap = require('mousetrap');
 
 @Injectable()
 export class HotkeysService {
@@ -21,7 +23,9 @@ export class HotkeysService {
             }
             return (element.contentEditable && element.contentEditable === 'true');
         };
-        this.mousetrap = new (<any>Mousetrap)();
+        this.mousetrap = options.target
+          ? new (<any>Mousetrap)(options.target)
+          : new (<any>Mousetrap)();
         if(!this.options.disableCheatSheet) {
             this.add(new Hotkey(
                     this.options.cheatSheetHotkey || '?',

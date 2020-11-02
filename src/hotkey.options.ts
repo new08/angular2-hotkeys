@@ -22,6 +22,11 @@ export interface IHotkeyOptions {
      * Description for the cheat sheet hot key in the cheat sheet. Default: 'Show / hide this help menu'
      */
     cheatSheetDescription?: string;
+    /**
+     * [可选] 在 target 上绑定快捷键
+     * [optional] bind on specific target (element)
+     */
+    target?: Element;
 }
 
 export const HotkeyOptions = new InjectionToken<IHotkeyOptions>('HotkeyOptions');
