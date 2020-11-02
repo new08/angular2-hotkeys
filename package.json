@@ -29,8 +29,8 @@
   },
   "main": "./index.js",
   "dependencies": {
-    "mousetrap": "^1.6.0",
-    "@types/mousetrap": "^1.6.0"
+    "mousetrap": "1.6.2",
+    "@types/mousetrap": "1.6.2"
   },
   "devDependencies": {
     "@angular/common": "4.2.5",
